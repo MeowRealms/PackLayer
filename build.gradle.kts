@@ -12,11 +12,11 @@ repositories {
     maven("https://oss.sonatype.org/content/repositories/snapshots")
     maven("https://mvn.exceptionflug.de/repository/exceptionflug-public/")
     maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://maven.elytrium.net/repo/")
 }
 
 dependencies {
-    compileOnly("dev.simplix:protocolize-api:2.3.0")
-    compileOnly("net.md-5:bungeecord-api:1.20-R0.1-SNAPSHOT")
+    compileOnly("io.github.4drian3d:vpacketevents-api:1.1.0")
     compileOnly("com.velocitypowered:velocity-api:3.2.0-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-proxy:3.0.1")
     annotationProcessor("com.velocitypowered:velocity-api:3.2.0-SNAPSHOT")

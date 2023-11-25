@@ -1,2 +1,2 @@
-rootProject.name = "BungeePackLayer"
+rootProject.name = "PackLayer"
 
