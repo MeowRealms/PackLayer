@@ -1,7 +1,6 @@
 package io.th0rgal.packsmanager.velocity;
 
 import com.google.inject.Inject;
-
 import com.velocitypowered.api.event.ResultedEvent;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.connection.DisconnectEvent;
@@ -11,8 +10,6 @@ import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.proxy.protocol.MinecraftPacket;
 import com.velocitypowered.proxy.protocol.packet.ResourcePackRequest;
-import io.github._4drian3d.vpacketevents.api.event.PacketReceiveEvent;
-
 import io.github._4drian3d.vpacketevents.api.event.PacketSendEvent;
 import org.slf4j.Logger;
 
