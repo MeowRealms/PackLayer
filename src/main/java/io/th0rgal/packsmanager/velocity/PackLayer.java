@@ -13,6 +13,7 @@ import com.velocitypowered.proxy.protocol.MinecraftPacket;
 import com.velocitypowered.proxy.protocol.packet.ResourcePackRequest;
 import io.github._4drian3d.vpacketevents.api.event.PacketReceiveEvent;
 
+import io.github._4drian3d.vpacketevents.api.event.PacketSendEvent;
 import org.slf4j.Logger;
 
 import java.util.HashMap;
@@ -24,7 +25,7 @@ import java.util.UUID;
         name = "PackLayer",
         version = "${version}",
         description = "${description}",
-        authors = {"th0rgal"},
+        authors = {"th0rgal", "xiaozhangup"},
         dependencies = {
                 @Dependency(id = "vpacketevents")
         }
@@ -47,7 +48,7 @@ public class PackLayer {
     }
 
     @Subscribe
-    public void onPacketReceive(PacketReceiveEvent event) {
+    public void onPacketReceive(PacketSendEvent event) {
         final MinecraftPacket packet = event.getPacket();
         if (packet instanceof ResourcePackRequest resourcePackRequest) {
             final UUID uuid = event.getPlayer().getUniqueId();
