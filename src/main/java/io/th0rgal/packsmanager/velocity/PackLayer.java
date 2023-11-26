@@ -47,6 +47,8 @@ public class PackLayer {
     @Subscribe
     public void onPacketReceive(PacketSendEvent event) {
         final MinecraftPacket packet = event.getPacket();
+        if (event.getPlayer().getProtocolVersion().getProtocol() > 763) return;
+
         if (packet instanceof ResourcePackRequest resourcePackRequest) {
             final UUID uuid = event.getPlayer().getUniqueId();
             if (map.containsKey(uuid) && map.get(uuid).equals(resourcePackRequest.getHash())) {
