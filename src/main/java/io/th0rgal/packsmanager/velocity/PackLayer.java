@@ -47,7 +47,7 @@ public class PackLayer {
     @Subscribe
     public void onPacketReceive(PacketSendEvent event) {
         final MinecraftPacket packet = event.getPacket();
-        if (event.getPlayer().getProtocolVersion().getProtocol() > 763) return;
+        if (event.getPlayer().getProtocolVersion().getProtocol() == 763) return; // 不能在 1.20.2 处理此数据包
 
         if (packet instanceof ResourcePackRequest resourcePackRequest) {
             final UUID uuid = event.getPlayer().getUniqueId();
