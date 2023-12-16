@@ -20,9 +20,13 @@ dependencies {
     compileOnly("com.velocitypowered:velocity-api:3.2.0-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-proxy:3.0.1")
     annotationProcessor("com.velocitypowered:velocity-api:3.2.0-SNAPSHOT")
+
+    compileOnly(fileTree("libs"))
 }
 
-
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
 
 tasks {
     jar {
