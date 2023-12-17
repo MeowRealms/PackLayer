@@ -57,7 +57,7 @@ public class PackLayer {
         final UUID uuid = event.getPlayer().getUniqueId();
         int protocol = event.getPlayer().getProtocolVersion().getProtocol();
 
-        if (packet instanceof RemoveResourcePack removeResourcePack) {
+        if (packet instanceof RemoveResourcePack) {
             if (protocol >= 764) { // 在 1.20.3+ 的服务端似乎会发一个这玩意, 不取消依然会导致客户端重载
                 event.setResult(ResultedEvent.GenericResult.denied());
             }
