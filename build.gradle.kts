@@ -17,11 +17,16 @@ repositories {
 
 dependencies {
     compileOnly("io.github.4drian3d:vpacketevents-api:1.1.0")
-    compileOnly("com.velocitypowered:velocity-api:3.2.0-SNAPSHOT")
-    compileOnly("com.velocitypowered:velocity-proxy:3.0.1")
-    annotationProcessor("com.velocitypowered:velocity-api:3.2.0-SNAPSHOT")
+    compileOnly("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT")
+    compileOnly("com.velocitypowered:velocity-proxy:3.3.0.1-SNAPSHOT")
+    annotationProcessor("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT")
 
     compileOnly(fileTree("libs"))
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 tasks.withType<JavaCompile> {

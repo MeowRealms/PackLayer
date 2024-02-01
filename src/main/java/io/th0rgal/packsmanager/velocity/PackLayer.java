@@ -10,8 +10,8 @@ import com.velocitypowered.api.plugin.Dependency;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.proxy.protocol.MinecraftPacket;
-import com.velocitypowered.proxy.protocol.packet.RemoveResourcePack;
-import com.velocitypowered.proxy.protocol.packet.ResourcePackRequest;
+import com.velocitypowered.proxy.protocol.packet.RemoveResourcePackPacket;
+import com.velocitypowered.proxy.protocol.packet.ResourcePackRequestPacket;
 import io.github._4drian3d.vpacketevents.api.event.PacketSendEvent;
 import org.slf4j.Logger;
 
@@ -57,13 +57,13 @@ public class PackLayer {
         final UUID uuid = event.getPlayer().getUniqueId();
         int protocol = event.getPlayer().getProtocolVersion().getProtocol();
 
-        if (packet instanceof RemoveResourcePack) {
+        if (packet instanceof RemoveResourcePackPacket) {
             if (protocol >= 764) { // 在 1.20.3+ 的服务端似乎会发一个这玩意, 不取消依然会导致客户端重载
                 event.setResult(ResultedEvent.GenericResult.denied());
             }
         }
 
-        if (packet instanceof ResourcePackRequest resourcePackRequest) {
+        if (packet instanceof ResourcePackRequestPacket resourcePackRequest) {
             if (protocol == 764) return; // 1.20.2 没救了
 
             if (Objects.equals(oldHashes.get(uuid), resourcePackRequest.getHash())) {
